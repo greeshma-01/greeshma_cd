@@ -1,0 +1,57 @@
+lint chk------
+#!/bin/sh
+
+echo "Lint check chal raha hai..."
+
+# Example: check for 'error' word
+if grep -r "error" .; then
+    echo "❌ Lint failed: 'error' mila code me"
+    exit 1
+fi
+
+# Rule 2: empty file check
+if [ ! -s file.txt ]; then
+    echo "❌ file.txt empty hai"
+    exit 1
+fi
+
+echo "✅ Lint passed"
+-----2--
+echo "error" >> file.txt
+git add file.txt
+git commit -m "test lint"
+---------pre push
+cd .git/hooks
+touch pre-push
+notepad pre-push
+#!/bin/sh
+
+echo "Running tests before push..."
+
+# Dummy test: check for word 'fail'
+if grep -r "fail" .; then
+    echo "❌ Tests failed! Push blocked"
+    exit 1
+fi
+
+echo "✅ Tests passed. Pushing allowed"
+----2---in mac/linux
+chmod +x pre-push
+-------3----
+echo "fail" >> file.txt
+git add file.txt
+git commit -m "test"
+git push origin main
+
+-----post-merge
+notepad .git/hooks/post-merge
+----
+#!/bin/sh
+
+echo "Merge complete!"
+
+# Example: auto message
+echo "Project updated successfully"
+
+----
+git merge branch_name

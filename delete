@@ -1,0 +1,19 @@
+
+git branch -d branch_name            # Local branch delete (only if merged)
+
+git branch -D branch_name            # Force delete local branch (even if not merged)
+
+git push origin --delete branch_name # Remote branch delete (GitHub se)
+
+git branch --merged                  # List all merged branches
+
+git branch --merged | grep -v "\*" | xargs git branch -d  
+                                      # Delete all merged branches except current
+
+git fetch --prune                    # Remove deleted remote branch references
+
+git branch                           # Show local branches
+
+git branch -r                        # Show remote branches
+
+git branch -a                        # Show all branches (local + remote)
