@@ -1,0 +1,870 @@
+-------------------------------------------------------1--------------------------------------------------------------
+  # Initialize Git Repository
+git init
+
+# Create a file (app.txt)
+echo "Hello Git" > app.txt
+
+# Check repository status
+git status
+
+# Stage file
+git add app.txt
+
+# Commit changes
+git commit -m "Initial commit with app.txt"
+
+# Modify file
+echo "Updated content in app.txt" >> app.txt
+
+# View differences
+git diff
+
+# Stage updated file
+git add app.txt
+
+# Commit updated changes
+git commit -m "Updated app.txt"
+
+# Create dev branch
+git branch dev
+
+# Switch to dev branch
+git checkout dev
+
+# Make changes in dev branch
+echo "Changes made in dev branch" >> app.txt
+
+# Check differences
+git diff
+
+# Stage changes
+git add app.txt
+
+# Commit changes in dev
+git commit -m "Changes added in dev branch"
+
+# Switch back to main branch
+git checkout main
+
+# Compare branches
+git diff main dev
+
+# Show all branches
+git branch
+
+# View commit history
+git log --oneline --graph --all
+---------------------------------------------------------2----------------------------------------------------
+# Initialize Git Repository
+git init
+
+# Create a file
+echo "Initial Project File" > app.txt
+
+# Add file to staging area
+git add app.txt
+
+# Commit initial file
+git commit -m "Initial commit"
+
+# Create dev branch
+git branch dev
+
+# View all branches
+git branch
+
+# Switch to dev branch
+git checkout dev
+
+# Make changes in dev branch
+echo "This change is added in DEV branch" >> app.txt
+
+# Check changes
+cat app.txt
+
+# Stage changes
+git add app.txt
+
+# Commit changes in dev branch
+git commit -m "Updated file in dev branch"
+
+# Switch back to main branch
+git checkout main
+
+# Check file in main branch
+cat app.txt
+
+# Compare main and dev branches
+git diff main dev
+
+# View branch history
+git log --oneline --graph --all
+
+-------------------------------------------------------------------3---------------------------------------------------
+# Initialize Git Repository
+git init
+
+# Create a file manually:
+# Create app.txt in the project folder and write:
+# Hello from Main Branch
+
+# Check repository status
+git status
+
+# Stage file
+git add app.txt
+
+# Commit file
+git commit -m "Initial commit"
+
+# Create dev branch
+git branch dev
+
+# Switch to dev branch
+git checkout dev
+
+# Open app.txt manually and add a new line:
+# Added change from DEV branch
+
+# Check changes
+git status
+
+# Stage changes
+git add app.txt
+
+# Commit changes in dev
+git commit -m "Changes added in dev branch"
+
+# Switch back to main branch
+git checkout main
+
+# Open app.txt manually and add DIFFERENT content:
+# Added change from MAIN branch
+
+# Stage changes
+git add app.txt
+
+# Commit changes in main
+git commit -m "Changes added in main branch"
+
+# Merge dev into main
+git merge dev
+
+# If both branches changed same lines,
+# Git will show MERGE CONFLICT.
+
+# Open app.txt manually.
+# You will see conflict markers like:
+
+# <<<<<<< HEAD
+# Main branch content
+# =======
+# Dev branch content
+# >>>>>>> dev
+
+# Remove conflict markers manually
+# Keep final required content only.
+
+# Save the file.
+
+# Stage resolved file
+git add app.txt
+
+# Commit resolved merge
+git commit -m "Resolved merge conflict"
+
+# View commit history
+git log --oneline --graph --all
+
+----------------------------------------------------4----------------------------------------------------
+# Check Git version
+git --version
+
+
+# ---------------- LOCAL REPOSITORY ----------------
+
+# Create a new project folder manually
+# Example:
+# Create folder -> MyProject
+
+# Open terminal inside MyProject folder
+
+# Initialize local repository
+git init
+
+# Create a file manually:
+# app.txt
+# Write some content inside it.
+
+# Check repository status
+git status
+
+# Stage file
+git add app.txt
+
+# Commit file
+git commit -m "Initial commit"
+
+
+# ---------------- REMOTE REPOSITORY ----------------
+
+# Create a repository on GitHub manually
+# Example repository name:
+# myproject
+
+# Connect local repository with remote repository
+git remote add origin https://github.com/USERNAME/myproject.git
+
+# Check configured remote
+git remote -v
+
+
+# ---------------- PUSH CHANGES ----------------
+
+# Push local commits to GitHub
+git push -u origin main
+
+
+# ---------------- CLONE REPOSITORY ----------------
+
+# Clone existing remote repository into local system
+git clone https://github.com/USERNAME/myproject.git
+
+# Move inside cloned repository
+cd myproject
+
+
+# ---------------- FETCH UPDATES ----------------
+
+# Fetch latest updates from remote repository
+git fetch
+
+# View fetched changes
+git log --oneline --all --graph
+
+
+# ---------------- PULL CHANGES ----------------
+
+# Download and merge latest remote changes
+git pull origin main
+
+
+# ---------------- MAKE NEW CHANGES ----------------
+
+# Open app.txt manually
+# Add or modify content
+
+# Check status
+git status
+
+# Stage updated file
+git add app.txt
+
+# Commit updated changes
+git commit -m "Updated app.txt"
+
+
+# ---------------- PUSH UPDATED CHANGES ----------------
+
+# Upload latest commits to remote repository
+git push origin main
+
+
+# ---------------- VIEW BRANCHES ----------------
+
+# Show local branches
+git branch
+
+# Show remote branches
+git branch -r
+
+# Show all branches
+git branch -a
+
+note - git pull origin main --allow-unrelated-histories
+--------------------------------------------------------5---------------------------------
+# ---------------- CREATE LOCAL REPOSITORY ----------------
+
+# Create a project folder manually
+# Example:
+# GitCollabProject
+
+# Open terminal inside project folder
+
+# Initialize Git repository
+git init
+
+# Create files manually
+# Example:
+# app.txt
+# Add some content inside it.
+
+# Check status
+git status
+
+# Stage files
+git add .
+
+# Commit files
+git commit -m "Initial project commit"
+
+
+# ---------------- CREATE GITHUB REPOSITORY ----------------
+
+# Create a new repository manually on GitHub
+# Example name:
+# git-collab-project
+
+# Connect local repo with GitHub remote
+git remote add origin https://github.com/USERNAME/git-collab-project.git
+
+# Push local code to GitHub
+git push -u origin main
+
+
+# ---------------- CLONE REPOSITORY ----------------
+
+# Open another directory/folder in terminal
+
+# Clone repository
+git clone https://github.com/USERNAME/git-collab-project.git
+
+# Move inside cloned repository
+cd git-collab-project
+
+
+# ---------------- CREATE FEATURE BRANCH ----------------
+
+# Create new feature branch
+git branch feature-login
+
+# Switch to feature branch
+git checkout feature-login
+
+# OR directly:
+# git checkout -b feature-login
+
+# Make changes manually
+# Example:
+# Open app.txt
+# Add:
+# Login feature added
+
+# Check status
+git status
+
+# Stage changes
+git add .
+
+# Commit changes
+git commit -m "Added login feature"
+
+
+# ---------------- PUSH FEATURE BRANCH ----------------
+
+# Push feature branch to GitHub
+git push origin feature-login
+
+
+# ---------------- CREATE PULL REQUEST ----------------
+
+# Open GitHub repository in browser
+
+# GitHub will show:
+# "Compare & pull request"
+
+# Click it
+
+# Review changes:
+# Files changed
+# Commits
+# Comments
+
+# Click:
+# Create Pull Request
+
+
+# ---------------- MERGE PULL REQUEST ----------------
+
+# Open created Pull Request
+
+# Click:
+# Merge Pull Request
+
+# Confirm merge
+
+
+# ---------------- UPDATE LOCAL MAIN BRANCH ----------------
+
+# Switch to main branch
+git checkout main
+
+# Pull latest merged changes
+git pull origin main
+
+
+# ---------------- VIEW BRANCHES ----------------
+
+# Show local branches
+git branch
+
+# Show remote branches
+git branch -r
+
+# Show all commits
+git log --oneline --graph --all
+--------------------------------------------------6-----------------------------------------------
+# ---------------- INITIAL SETUP ----------------
+
+# Initialize repository
+git init
+
+# Create files manually:
+# app.txt
+# data.txt
+
+# Add some content inside files
+
+# Check status
+git status
+
+# Stage files
+git add .
+
+# Commit files
+git commit -m "Initial commit"
+
+
+# ---------------- UNDO UNSTAGED CHANGES ----------------
+
+# Open app.txt manually
+# Add or modify some content
+
+# Check status
+git status
+
+# Undo unstaged changes
+git checkout -- app.txt
+
+# File returns to last committed state
+
+
+# ---------------- UNSTAGE FILES ----------------
+
+# Modify app.txt again manually
+
+# Stage file
+git add app.txt
+
+# Check status
+git status
+
+# Unstage file
+git reset app.txt
+
+# File remains modified locally
+# But removed from staging area
+
+
+# ---------------- AMEND LAST COMMIT ----------------
+
+# Modify file manually again
+
+# Stage updated file
+git add app.txt
+
+# Modify previous commit
+git commit --amend -m "Updated initial commit"
+
+
+# ---------------- GIT RESET SOFT ----------------
+
+# View commits
+git log --oneline
+
+# Move HEAD back by 1 commit
+# Keep changes staged
+git reset --soft HEAD~1
+
+
+# ---------------- GIT RESET MIXED ----------------
+
+# Default reset mode
+# Keep changes in working directory
+# Remove from staging area
+git reset --mixed HEAD~1
+
+# OR simply:
+# git reset HEAD~1
+
+
+# ---------------- GIT RESET HARD ----------------
+
+# WARNING:
+# Deletes commits and local changes permanently
+
+git reset --hard HEAD~1
+
+
+# ---------------- GIT REVERT ----------------
+
+# Safely undo a commit by creating new reverse commit
+
+# View commits
+git log --oneline
+
+# Revert specific commit
+git revert COMMIT_ID
+
+# Example:
+# git revert a1b2c3d
+
+
+# ---------------- GIT REFLOG ----------------
+
+# View all HEAD history
+git reflog
+
+# Recover lost commit
+git reset --hard REFLOG_ID
+
+# Example:
+# git reset --hard abc1234
+
+
+# ---------------- CHECK FINAL STATUS ----------------
+
+git status
+
+# View commit history
+git log --oneline --graph --all
+
+----------------------------------------7----------------------------------------
+# ---------------- INITIAL SETUP ----------------
+
+# Initialize repository
+git init
+
+# Create app.txt manually
+# Write:
+# Initial Project
+
+# Stage file
+git add app.txt
+
+# Commit file
+git commit -m "Initial commit"
+
+
+# ---------------- CREATE DEVELOP BRANCH ----------------
+
+# Create and switch to develop branch
+git checkout -b develop
+
+
+# ---------------- CREATE FEATURE BRANCH ----------------
+
+# Create feature branch from develop
+git checkout -b feature-login
+
+
+# ---------------- WORK IN FEATURE BRANCH ----------------
+
+# Open app.txt manually
+# Add:
+# Login Page Added
+
+# Stage changes
+git add app.txt
+
+# First incremental commit
+git commit -m "Added login page"
+
+
+# Make more manual changes in app.txt
+# Add:
+# Login Validation Added
+
+# Stage changes
+git add app.txt
+
+# Second incremental commit
+git commit -m "Added login validation"
+
+
+# ---------------- PUSH FEATURE BRANCH ----------------
+
+# Push feature branch to remote
+git push origin feature-login
+
+
+# ---------------- UPDATE DEVELOP BRANCH ----------------
+
+# Switch to develop branch
+git checkout develop
+
+# Pull latest develop changes from remote
+git pull origin develop
+
+
+# ---------------- UPDATE FEATURE BRANCH ----------------
+
+# Switch back to feature branch
+git checkout feature-login
+
+# Merge latest develop changes into feature branch
+git merge develop
+
+
+# ---------------- MERGE FEATURE INTO DEVELOP ----------------
+
+# Switch to develop branch
+git checkout develop
+
+# Merge feature branch
+git merge feature-login
+
+
+# ---------------- PUSH UPDATED DEVELOP BRANCH ----------------
+
+git push origin develop
+
+
+# ---------------- FAST-FORWARD MERGE EXAMPLE ----------------
+
+# If develop had no new commits,
+# merge happens as fast-forward automatically.
+
+
+# ---------------- CREATE MERGE CONFLICT ----------------
+
+# Switch to feature branch
+git checkout feature-login
+
+# Open app.txt manually
+# Change same line differently
+
+# Commit changes
+git add app.txt
+git commit -m "Feature conflicting change"
+
+# Switch to develop
+git checkout develop
+
+# Open SAME line in app.txt
+# Change it differently
+
+# Commit changes
+git add app.txt
+git commit -m "Develop conflicting change"
+
+# Try merging
+git merge feature-login
+
+
+# ---------------- RESOLVE CONFLICT ----------------
+
+# Open app.txt manually
+
+# Remove conflict markers:
+# <<<<<<<
+# =======
+# >>>>>>>
+
+# Keep final required content only
+
+# Save file
+
+# Stage resolved file
+git add app.txt
+
+# Commit resolved merge
+git commit -m "Resolved merge conflict"
+
+
+# ---------------- VIEW HISTORY ----------------
+
+git log --oneline --graph --all
+
+
+----------------------------------------------------------8------------------------------------------------
+# =========================================================
+# LOCAL VS REMOTE REPOSITORIES
+# =========================================================
+
+# LOCAL REPOSITORY:
+# Repository stored in your own system/laptop
+
+# REMOTE REPOSITORY:
+# Repository stored online (GitHub)
+
+
+# =========================================================
+# CREATE LOCAL REPOSITORY
+# =========================================================
+
+# Create project folder manually
+# Example:
+# GitProject
+
+# Open terminal inside folder
+
+# Initialize git
+git init
+
+# Create app.txt manually
+# Add some content
+
+# Check status
+git status
+
+# Stage file
+git add app.txt
+
+# Commit file
+git commit -m "Initial commit"
+
+
+# =========================================================
+# CONFIGURE REMOTE REPOSITORY
+# =========================================================
+
+# Create repository manually on GitHub
+
+# Connect local repo with remote repo
+git remote add origin https://github.com/USERNAME/repository.git
+
+# Verify remote
+git remote -v
+
+
+# =========================================================
+# PUSH CHANGES TO REMOTE
+# =========================================================
+
+# Push local commits to GitHub
+git push -u origin main
+
+
+# =========================================================
+# CLONE REPOSITORY
+# =========================================================
+
+# Clone repository into another directory
+git clone https://github.com/USERNAME/repository.git
+
+# Move into cloned repository
+cd repository
+
+
+# =========================================================
+# FETCH UPDATES
+# =========================================================
+
+# Download remote updates only
+git fetch
+
+# View fetched commits
+git log --oneline --all --graph
+
+
+# =========================================================
+# PULL CHANGES
+# =========================================================
+
+# Download + merge remote changes
+git pull origin main
+
+
+# =========================================================
+# MAKE LOCAL CHANGES
+# =========================================================
+
+# Open app.txt manually
+# Add new content
+
+# Stage changes
+git add app.txt
+
+# Commit changes
+git commit -m "Updated app file"
+
+# Push changes to GitHub
+git push origin main
+
+
+# =========================================================
+# IDENTIFY COMMIT TO ROLLBACK
+# =========================================================
+
+# View commit history
+git log --oneline
+
+# Example output:
+# a1b2c3d Updated app
+# x7y8z9 Initial commit
+
+
+# =========================================================
+# RESET LOCAL BRANCH TO PREVIOUS COMMIT
+# =========================================================
+
+# Soft reset:
+# Removes commit but keeps changes staged
+git reset --soft HEAD~1
+
+# Mixed reset:
+# Removes commit and unstages changes
+git reset --mixed HEAD~1
+
+# Hard reset:
+# Removes commit and deletes changes completely
+git reset --hard HEAD~1
+
+
+# =========================================================
+# DISCARD UNWANTED LOCAL CHANGES
+# =========================================================
+
+# Discard unstaged file changes
+git checkout -- app.txt
+
+# Discard all local changes
+git reset --hard
+
+
+# =========================================================
+# REVERT COMMIT (SAFE FOR SHARED BRANCH)
+# =========================================================
+
+# Create reverse commit safely
+git revert COMMIT_ID
+
+# Example:
+# git revert a1b2c3d
+
+
+# =========================================================
+# VERIFY ROLLBACK
+# =========================================================
+
+# Check commit history
+git log --oneline
+
+# Check current status
+git status
+
+# View file content
+cat app.txt
+
+
+# =========================================================
+# VIEW COMPLETE HISTORY
+# =========================================================
+
+git log --oneline --graph --all
+
+-----------------------------------------9-------------------------------------------------------------
+
+

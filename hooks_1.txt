@@ -1,0 +1,99 @@
+lint chk------
+cd .git/hooks
+touch pre-commit
+add this content ---
+#!/bin/sh
+
+echo "Lint check chal raha hai..."
+
+# Example: check for 'error' word
+if grep -r "error" .; then
+    echo "❌ Lint failed: 'error' mila code me"
+    exit 1
+fi
+
+# Rule 2: empty file check
+if [ ! -s file.txt ]; then
+    echo "❌ file.txt empty hai"
+    exit 1
+fi
+chmod +x .git/hooks/pre-commit
+ch ../..
+-----2--
+echo "error" >> file.txt
+git add file.txt
+git commit -m "test lint"
+---------pre push---------------
+cd .git/hooks
+touch pre-push
+notepad pre-push
+#!/bin/sh
+
+echo "Running tests before push..."
+
+# Dummy test: check for word 'fail'
+if grep -r "fail" .; then
+    echo "❌ Tests failed! Push blocked"
+    exit 1
+fi
+
+echo "✅ Tests passed. Pushing allowed"
+----2---in mac/linux
+chmod +x pre-push
+-------3----
+echo "fail" >> file.txt
+git add file.txt
+git commit -m "test"
+git push origin main
+
+-----post-merge
+# ================= POST-MERGE HOOK =================
+
+# Go inside hooks folder
+cd .git/hooks
+
+# Create post-merge hook file
+touch post-merge
+
+# Open post-merge manually and add:
+
+#!/bin/bash
+
+echo "✅ Merge completed successfully"
+
+# Example automatic task after merge
+# Update dependencies / build / notification etc.
+
+# Save file
+
+
+# Give executable permission
+chmod +x post-merge
+
+
+# ================= TEST POST-MERGE =================
+
+# Go back to project folder
+cd ../..
+
+# Create branch
+git checkout -b dev
+
+# Open app.txt manually
+# Add some content
+
+# Stage changes
+git add app.txt
+
+# Commit changes
+git commit -m "Dev changes"
+
+# Switch back to main
+git checkout main
+
+# Merge dev branch
+git merge dev
+
+
+# OUTPUT AFTER MERGE:
+# ✅ Merge completed successfully
