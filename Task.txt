@@ -1,0 +1,185 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class VerifyTitle {
+	public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://www.google.com");
+
+        String expectedTitle = "Google";
+        String actualTitle = driver.getTitle();
+
+        if(actualTitle.equals(expectedTitle)) {
+            System.out.println("Title Verified");
+        } else {
+            System.out.println("Title Mismatch");
+        }
+        
+
+        driver.quit();
+}
+}
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class productincart {
+
+    public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://www.saucedemo.com/");
+
+        // Login
+        driver.findElement(By.id("user-name"))
+              .sendKeys("standard_user");
+
+        driver.findElement(By.id("password"))
+              .sendKeys("secret_sauce");
+
+        driver.findElement(By.id("login-button"))
+              .click();
+
+        // Add backpack
+        driver.findElement(
+            By.id("add-to-cart-sauce-labs-backpack")
+        ).click();
+
+        // Open cart
+        driver.findElement(By.className("shopping_cart_link"))
+              .click();
+
+        // Get product name
+        String product =
+            driver.findElement(By.className("inventory_item_name"))
+                  .getText();
+
+        if (product.equals("Sauce Labs Backpack")) {
+            System.out.println("PASS: Product is in cart");
+        } else {
+            System.out.println("FAIL: Product not found");
+        }
+
+        driver.quit();
+    }
+}
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class VerifyTitle {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://www.google.com");
+String expected = "Selenium Java";
+
+driver.findElement(By.name("q"))
+      .sendKeys(expected + Keys.ENTER);
+
+Thread.sleep(3000);
+
+String title = driver.getTitle();
+
+if (title.contains(expected)) {
+    System.out.println("PASS");
+} else {
+    System.out.println("FAIL");
+}
+
+driver.quit();
+    }
+}
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginValidation {
+    public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://practicetestautomation.com/practice-test-login/");
+
+        driver.findElement(By.id("username"))
+                .sendKeys("student");
+
+        driver.findElement(By.id("password"))
+                .sendKeys("Password123");
+
+        driver.findElement(By.id("submit"))
+                .click();
+
+        String url = driver.getCurrentUrl();
+
+        if(url.contains("logged-in-successfully")) {
+            System.out.println("Login Passed");
+        } else {
+            System.out.println("Login Failed");
+        }
+
+        driver.quit();
+    }
+}
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MultipleUserTest {
+
+    public static void main(String[] args) {
+
+        String[] users = {
+            "standard_user",
+            "locked_out_user",
+            "problem_user",
+            "performance_glitch_user",
+            "error_user",
+            "visual_user"
+        };
+
+        for (String user : users) {
+
+            WebDriver driver = new ChromeDriver();
+
+            driver.get("https://www.saucedemo.com/");
+
+            // Enter username
+            driver.findElement(By.id("user-name"))
+                  .sendKeys(user);
+
+            // Enter password
+            driver.findElement(By.id("password"))
+                  .sendKeys("secret_sauce");
+
+            // Click Login
+            driver.findElement(By.id("login-button"))
+                  .click();
+
+            // Check login result
+            String url = driver.getCurrentUrl();
+
+            if (url.contains("inventory.html")) {
+
+                System.out.println(user + " : PASS");
+
+            } else {
+
+                System.out.println(user + " : FAIL");
+
+            }
+
+            driver.quit();
+        }
+    }
+}
